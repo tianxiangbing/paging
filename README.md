@@ -1,7 +1,5 @@
 # paging
 分页控件paging
-# lazy-load
-图片懒加载
 例子见[DEMO](http://www.lovewebgames.com/jsmodule/paging.html)  
 ![预览效果:](example/paging.jpg "分页组件效果图")
 #使用方法案例:

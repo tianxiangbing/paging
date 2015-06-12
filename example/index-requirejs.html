@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>分页控件</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="../src/paging.css">
+	</head>
+	<body>
+	<div id="pageTool"></div>
+		<script type="text/javascript" src="../src/require.js"></script>
+		<script>
+		requirejs.config({
+			//By default load any module IDs from js/lib
+			baseUrl: '../dest',
+			paths: {
+				$:"jquery-1.11.2",
+				paging:"paging"
+			},
+			shim:{
+				"$":{
+					export:'$'
+				}
+			}
+		});
+		require(["$","paging"], function($,Paging){
+			var p = new Paging();
+			p.init({target:'#pageTool',pagesize:10,count:100});
+		});
+		</script>
+	</body>
+</html>

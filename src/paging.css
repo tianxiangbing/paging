@@ -1,0 +1,11 @@
+.ui-paging-container{color:#666;font-size: 12px;}
+.ui-paging-container ul{overflow: hidden;text-align: center;}
+.ui-paging-container ul,.ui-paging-container li{list-style: none;}
+.ui-paging-container li{display: inline-block;padding:3px 6px;margin-left: 5px;}
+.ui-paging-container li.ui-pager{cursor: pointer; border:1px solid #ccc;border-radius: 2px;}
+.ui-paging-container li.ui-pager:hover,.ui-paging-container li.focus{background-color: #288df0;color:#FFFFFF;}
+.ui-paging-container li.ui-paging-ellipse{border:none;}
+.ui-paging-container li.ui-paging-toolbar{padding:0;}
+.ui-paging-container li.ui-paging-toolbar select{height:22px;border:1px solid #ccc;}
+.ui-paging-container li.ui-paging-toolbar input{height:20px;padding:0;border:1px solid #ccc;text-align: center;width: 30px;margin-left: 5px;}
+.ui-paging-container li.ui-paging-toolbar a{text-decoration: none;display: inline-block;height:20px;border:1px solid #ccc;vertical-align: top;border-radius: 2px;line-height: 20px;padding:0 3px;cursor: pointer;margin-left: 5px;color: #666;}

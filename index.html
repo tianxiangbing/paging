@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Paging by tianxiangbing</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Paging</h1>
+        <h2>分页控件paging</h2>
+        <a href="https://github.com/tianxiangbing/paging" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="paging" class="anchor" href="#paging" aria-hidden="true"><span class="octicon octicon-link"></span></a>paging</h1>
+
+<p>分页控件paging
+例子见<a href="http://www.lovewebgames.com/jsmodule/paging.html">DEMO</a><br>
+<img src="example/paging.jpg" alt="预览效果:" title="分页组件效果图"></p>
+
+<h1>
+<a id="使用方法案例" class="anchor" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%A1%88%E4%BE%8B" aria-hidden="true"><span class="octicon octicon-link"></span></a>使用方法案例:</h1>
+
+<pre><code>&lt;div id="pageTool"&gt;&lt;/div&gt;
+$('#pageTool').Paging({pagesize:10,count:100});
+</code></pre>
+
+<h1>
+<a id="或者" class="anchor" href="#%E6%88%96%E8%80%85" aria-hidden="true"><span class="octicon octicon-link"></span></a>或者</h1>
+
+<pre><code>var p = new Paging();
+p.init({target:'#pageTool',pagesize:10,count:100});
+</code></pre>
+
+<hr>
+
+<h1>
+<a id="属性和方法" class="anchor" href="#%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95" aria-hidden="true"><span class="octicon octicon-link"></span></a>属性和方法</h1>
+
+<h2>
+<a id="pagesize" class="anchor" href="#pagesize" aria-hidden="true"><span class="octicon octicon-link"></span></a>pagesize:</h2>
+
+<pre><code>每页的条数
+</code></pre>
+
+<h2>
+<a id="current" class="anchor" href="#current" aria-hidden="true"><span class="octicon octicon-link"></span></a>current:</h2>
+
+<pre><code>当前页码，默认为1
+</code></pre>
+
+<h2>
+<a id="prevtpl" class="anchor" href="#prevtpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>prevTpl</h2>
+
+<pre><code>上一页的模板,默认“上一页”
+</code></pre>
+
+<h2>
+<a id="nexttpl" class="anchor" href="#nexttpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>nextTpl</h2>
+
+<pre><code>下一页的模板，默认“下一页”
+</code></pre>
+
+<h2>
+<a id="firsttpl" class="anchor" href="#firsttpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>firstTpl</h2>
+
+<pre><code>首页的模板，默认“首页”
+</code></pre>
+
+<h2>
+<a id="lasttpl" class="anchor" href="#lasttpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>lastTpl</h2>
+
+<pre><code>末页的模板，默认“末页”
+</code></pre>
+
+<h2>
+<a id="ellipsetpl" class="anchor" href="#ellipsetpl" aria-hidden="true"><span class="octicon octicon-link"></span></a>ellipseTpl</h2>
+
+<pre><code>省略号的模板，默认“...”
+</code></pre>
+
+<h2>
+<a id="toolbar-bool" class="anchor" href="#toolbar-bool" aria-hidden="true"><span class="octicon octicon-link"></span></a>toolbar: bool</h2>
+
+<pre><code>是否显示工具栏,默认为false
+</code></pre>
+
+<h2>
+<a id="pagesizelist" class="anchor" href="#pagesizelist" aria-hidden="true"><span class="octicon octicon-link"></span></a>pageSizeList:[]</h2>
+
+<pre><code>当显示工具栏时有效，可设置每页条数，默认为[5,10,15,20]
+</code></pre>
+
+<h2>
+<a id="changepagesizefunctionps" class="anchor" href="#changepagesizefunctionps" aria-hidden="true"><span class="octicon octicon-link"></span></a>changePagesize:function(ps)</h2>
+
+<pre><code>修改每页的条数,参数为int
+</code></pre>
+
+<h2>
+<a id="gofunctionp" class="anchor" href="#gofunctionp" aria-hidden="true"><span class="octicon octicon-link"></span></a>go:function(p)</h2>
+
+<pre><code>跳转至某一页,默认到current
+</code></pre>
+
+<h2>
+<a id="renderfunctionops" class="anchor" href="#renderfunctionops" aria-hidden="true"><span class="octicon octicon-link"></span></a>render:function(ops)</h2>
+
+<pre><code>重新渲染,ops:{count:int,pagesize:int,current:int,pagecount:int}
+</code></pre>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/tianxiangbing/paging/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/tianxiangbing/paging/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/tianxiangbing/paging"></a> is maintained by <a href="https://github.com/tianxiangbing">tianxiangbing</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>

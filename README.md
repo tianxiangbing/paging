@@ -28,6 +28,8 @@
 	是否显示工具栏,默认为false
 ##pageSizeList:[]
 	当显示工具栏时有效，可设置每页条数，默认为[5,10,15,20]
+##callback:function(page,size,count)
+	翻页时的回调方法，page为当前页码,size为每页条数，count为总页数
 ##changePagesize:function(ps)
 	修改每页的条数,参数为int
 ##go:function(p)

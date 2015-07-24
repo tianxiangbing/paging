@@ -64,6 +64,9 @@
 		bindEvent: function() {
 			var _this = this;
 			this.container.on('click', 'li.js-page-action,li.ui-pager', function(e) {
+				if($(this).hasClass('ui-pager-disabled')||$(this).hasClass('focus')){
+					return false;
+				}
 				if ($(this).hasClass('js-page-action')) {
 					if ($(this).hasClass('js-page-first')) {
 						_this.current = 1;
@@ -81,7 +84,7 @@
 					_this.current = parseInt($(this).data('page'));
 				}
 				_this.go();
-			})
+			});
 		},
 		go: function(p) {
 			var _this = this;
@@ -129,6 +132,14 @@
 			html += '<li class="js-page-last js-page-action ui-pager">' + this.settings.lastTpl + '</li>';
 			html += '</ul>';
 			this.container.html(html);
+			if(this.current ==1 ){
+				$('.js-page-prev',this.container).addClass('ui-pager-disabled');
+				$('.js-page-first',this.container).addClass('ui-pager-disabled');
+			}
+			if(this.current ==this.pagecount ){
+				$('.js-page-next',this.container).addClass('ui-pager-disabled');
+				$('.js-page-last',this.container).addClass('ui-pager-disabled');
+			}
 			this.container.find('li[data-page="' + this.current + '"]').addClass('focus').siblings().removeClass('focus');
 			if (this.settings.toolbar) {
 				this.bindToolbar();

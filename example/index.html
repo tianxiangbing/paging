@@ -12,7 +12,9 @@
 		<script type="text/javascript" src="../src/jquery-1.11.2.js"></script>
 		<script type="text/javascript" src="../src/paging.js"></script>
 		<script>
-		$('#pageTool').Paging({pagesize:10,count:100});
+		$('#pageTool').Paging({pagesize:10,count:100,callback:function(){
+			console.log(arguments)
+			}});
 		$('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true});
 		</script>
 	</body>

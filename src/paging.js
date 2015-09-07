@@ -9,13 +9,13 @@
 (function(root, factory) {
 	//amd
 	if (typeof define === 'function' && define.amd) {
-		define(['$'], factory);
+		define(['$', 'query'], factory);
 	} else if (typeof exports === 'object') { //umd
 		module.exports = factory();
 	} else {
-		root.Paging = factory(window.Zepto || window.jQuery || $);
+		root.Paging = factory(window.Zepto || window.jQuery || $, Query);
 	}
-})(this, function($) {
+})(this, function($, Query) {
 	$.fn.Paging = function(settings) {
 		var arr = [];
 		$(this).each(function() {
@@ -45,6 +45,7 @@
 				lastTpl: "末页",
 				ellipseTpl: "...",
 				toolbar: false,
+				hash:true,
 				pageSizeList: [5, 10, 15, 20]
 			}, settings);
 			this.target = $(this.settings.target);
@@ -64,7 +65,7 @@
 		bindEvent: function() {
 			var _this = this;
 			this.container.on('click', 'li.js-page-action,li.ui-pager', function(e) {
-				if($(this).hasClass('ui-pager-disabled')||$(this).hasClass('focus')){
+				if ($(this).hasClass('ui-pager-disabled') || $(this).hasClass('focus')) {
 					return false;
 				}
 				if ($(this).hasClass('js-page-action')) {
@@ -85,6 +86,14 @@
 				}
 				_this.go();
 			});
+			/*
+			$(window).on('hashchange',function(){
+				var page=  parseInt(Query.getHash('page'));
+				if(_this.current !=page){
+					_this.go(page||1);
+				}
+			})
+			 */
 		},
 		go: function(p) {
 			var _this = this;
@@ -92,6 +101,11 @@
 			this.current = Math.max(1, _this.current);
 			this.current = Math.min(this.current, _this.pagecount);
 			this.format();
+			if(this.settings.hash){
+				Query.setHash({
+					page:this.current
+				});
+			}
 			this.settings.callback && this.settings.callback(this.current, this.pagesize, this.pagecount);
 		},
 		changePagesize: function(ps) {
@@ -132,13 +146,13 @@
 			html += '<li class="js-page-last js-page-action ui-pager">' + this.settings.lastTpl + '</li>';
 			html += '</ul>';
 			this.container.html(html);
-			if(this.current ==1 ){
-				$('.js-page-prev',this.container).addClass('ui-pager-disabled');
-				$('.js-page-first',this.container).addClass('ui-pager-disabled');
+			if (this.current == 1) {
+				$('.js-page-prev', this.container).addClass('ui-pager-disabled');
+				$('.js-page-first', this.container).addClass('ui-pager-disabled');
 			}
-			if(this.current ==this.pagecount ){
-				$('.js-page-next',this.container).addClass('ui-pager-disabled');
-				$('.js-page-last',this.container).addClass('ui-pager-disabled');
+			if (this.current == this.pagecount) {
+				$('.js-page-next', this.container).addClass('ui-pager-disabled');
+				$('.js-page-last', this.container).addClass('ui-pager-disabled');
 			}
 			this.container.find('li[data-page="' + this.current + '"]').addClass('focus').siblings().removeClass('focus');
 			if (this.settings.toolbar) {
@@ -156,10 +170,10 @@
 			sel.html(str);
 			sel.val(this.pagesize);
 			$('input', html).val(this.current);
-			$('input', html).click(function(){
+			$('input', html).click(function() {
 				$(this).select();
-			}).keydown(function(e){
-				if(e.keyCode == 13){
+			}).keydown(function(e) {
+				if (e.keyCode == 13) {
 					var current = parseInt($(this).val()) || 1;
 					_this.go(current);
 				}
@@ -168,7 +182,7 @@
 				var current = parseInt($(this).prev().val()) || 1;
 				_this.go(current);
 			});
-			sel.change(function(){
+			sel.change(function() {
 				_this.changePagesize($(this).val());
 			});
 			this.container.children('ul').append(html);

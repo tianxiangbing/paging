@@ -10,6 +10,8 @@
 	p.init({target:'#pageTool',pagesize:10,count:100});
 ***
 #属性和方法
+##hash:true
+	是否用url hash值的形式来表达分页，默认为true,但如果出现两个分页时，为导致互相影响，应保证只有一个对应hash
 ##pagesize:
 	每页的条数
 ##current:

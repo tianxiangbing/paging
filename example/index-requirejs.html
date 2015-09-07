@@ -12,10 +12,11 @@
 		<script>
 		requirejs.config({
 			//By default load any module IDs from js/lib
-			baseUrl: '../dest',
+			baseUrl: '../src',
 			paths: {
 				$:"jquery-1.11.2",
-				paging:"paging"
+				paging:"paging",
+				'query':'query'
 			},
 			shim:{
 				"$":{

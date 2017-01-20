@@ -1,10 +1,12 @@
 /*
  * Created with Sublime Text 3.
- * license: http://www.lovewebgames.com/jsmodule/index.html
+ * demo地址: http://www.lovewebgames.com/jsmodule/index.html
+ * github: https://github.com/tianxiangbing/query
  * User: 田想兵
  * Date: 2015-06-11
  * Time: 16:27:55
  * Contact: 55342775@qq.com
+ * Desc: 确保代码最新及时修复bug，请去github上下载最新源码 https://github.com/tianxiangbing/query
  */
 (function(root, factory) {
 	//amd

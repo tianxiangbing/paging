@@ -1,10 +1,12 @@
 /*
  * Created with Sublime Text 3.
- * license: http://www.lovewebgames.com/jsmodule/index.html
+ * demo地址: http://www.lovewebgames.com/jsmodule/index.html
+ * github: https://github.com/tianxiangbing/paging
  * User: 田想兵
  * Date: 2015-06-11
  * Time: 16:27:55
  * Contact: 55342775@qq.com
+ * Desc: 确保代码最新及时修复bug，请去github上下载最新源码 https://github.com/tianxiangbing/paging
  */
 (function(root, factory) {
 	//amd
@@ -125,11 +127,15 @@
 					html += '<li class="ui-paging-ellipse">' + this.settings.ellipseTpl + '</li>';
 				} else
 				if (this.current > 2 && this.current <= this.pagecount - 2) {
-					html += '<li>' + this.settings.ellipseTpl + '</li>';
+					if(this.current >3){
+						html += '<li>' + this.settings.ellipseTpl + '</li>';
+					}
 					html += '<li data-page="' + (this.current - 1) + '" class="ui-pager">' + (this.current - 1) + '</li>';
 					html += '<li data-page="' + this.current + '" class="ui-pager">' + this.current + '</li>';
 					html += '<li data-page="' + (this.current + 1) + '" class="ui-pager">' + (this.current + 1) + '</li>';
-					html += '<li class="ui-paging-ellipse" class="ui-pager">' + this.settings.ellipseTpl + '</li>';
+					if(this.current < this.pagecount-2){
+						html += '<li class="ui-paging-ellipse" class="ui-pager">' + this.settings.ellipseTpl + '</li>';
+					}
 				} else {
 					html += '<li class="ui-paging-ellipse" >' + this.settings.ellipseTpl + '</li>';
 					for (var i = this.pagecount - 2; i < this.pagecount; i++) {

@@ -14,17 +14,17 @@
 			//By default load any module IDs from js/lib
 			baseUrl: '../src',
 			paths: {
-				$:"jquery-1.11.2",
-				paging:"paging",
+				'$':"jquery",
+				'paging':"paging",
 				'query':'query'
 			},
 			shim:{
 				"$":{
-					export:'$'
+					export:'jQuery'
 				}
 			}
 		});
-		require(["$","paging"], function($,Paging){
+		require(["jQuery","paging"], function($,Paging){
 			var p = new Paging();
 			p.init({target:'#pageTool',pagesize:10,count:100});
 		});

@@ -1,6 +1,6 @@
 {
   "name": "paging",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "js分页插件",
   "main": "gulpfile.js",
   "directories": {

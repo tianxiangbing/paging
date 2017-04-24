@@ -47,7 +47,7 @@
 				lastTpl: "末页",
 				ellipseTpl: "...",
 				toolbar: false,
-				hash: true,
+				hash: false,
 				pageSizeList: [5, 10, 15, 20]
 			}, settings);
 			this.target = $(this.settings.target);

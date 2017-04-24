@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>分页插件paging by https://github.com/tianxiangbing/paging</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="paging.css">
+	</head>
+	<body>
+		<a href="https://github.com/tianxiangbing/paging">https://github.com/tianxiangbing/paging</a>
+		<div id="pageTool"></div>
+		<div id="pageToolbar"></div>
+		<script type="text/javascript" src="jquery-1.11.2.js"></script>
+		<script type="text/javascript" src="paging.js"></script>
+		<script>
+		var page =new Paging();
+		page.init({target:$('#pageTool'), pagesize:10,count:100,callback:function(pagecount,size,count){
+			console.log(arguments)
+			alert('当前第 ' +pagecount +'页,每页 '+size+'条,总页数：'+count+'页');
+			//动态设置总条数 
+			page.render({count:89,current:pagecount});
+		}});
+		//jquery插件的写法
+		$('#pageToolbar').Paging({pagesize:10,count:85,toolbar:true,hash:true});
+		</script>
+	</body>
+</html>

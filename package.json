@@ -1,0 +1,38 @@
+{
+  "name": "paging",
+  "version": "1.0.3",
+  "description": "js分页插件",
+  "main": "gulpfile.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "gulp-concat": "^2.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-requirejs": "^1.0.0-rc2",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianxiangbing/paging.git"
+  },
+  "keywords": [
+    "page",
+    "js",
+    "jquery"
+  ],
+  "author": "tianxiangbing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tianxiangbing/paging/issues"
+  },
+  "homepage": "https://github.com/tianxiangbing/paging#readme"
+}

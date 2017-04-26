@@ -1,7 +1,11 @@
 # paging
 分页控件paging
-例子见[DEMO](http://www.lovewebgames.com/jsmodule/paging.html)  
-![预览效果:](example/paging.jpg "分页组件效果图")
+
+例子见：[http://www.lovewebgames.com/jsmodule/paging.html](http://www.lovewebgames.com/jsmodule/paging.html)  
+或
+[http://tianxiangbing.github.io/paging/](http://tianxiangbing.github.io/paging/)  
+
+![预览效果:](http://tianxiangbing.github.io/paging/paging.jpg "分页组件效果图")
 
 # 使用方法案例:
 

@@ -11,7 +11,7 @@
 (function (root, factory) {
 	//amd
 	if (typeof define === 'function' && define.amd) {
-		define(['$', 'query'], factory);
+		define(['jquery', 'query'], factory);
 	} else if (typeof exports === 'object') { //umd
 		module.exports = factory();
 	} else {

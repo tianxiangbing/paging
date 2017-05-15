@@ -1,10 +1,13 @@
 {
-  "name": "paging",
+  "name": "jq-page",
   "version": "1.0.4",
   "description": "js分页插件",
-  "main": "gulpfile.js",
+  "main": "dist/paging.js",
   "directories": {
     "example": "example"
+  },
+  "scripts": {
+    "prepublish": "gulp"
   },
   "dependencies": {
     "gulp-concat": "^2.6.1"

@@ -19,6 +19,10 @@
 	//重新渲染分页使用render
 	p.render({count:100,pagesize:10,current:3});
 ***
+# npm安装方式
+```bash
+npm install jq-page
+```
 # 属性和方法
 ## hash:false
 

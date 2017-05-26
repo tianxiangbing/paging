@@ -1,6 +1,6 @@
 {
   "name": "jq-page",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "js分页插件",
   "main": "dist/paging.js",
   "directories": {
@@ -9,10 +9,8 @@
   "scripts": {
     "prepublish": "gulp"
   },
-  "dependencies": {
-    "gulp-concat": "^2.6.1"
-  },
   "devDependencies": {
+    "gulp-concat": "^2.6.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-minify-css": "^1.2.4",

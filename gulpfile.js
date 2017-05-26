@@ -17,7 +17,8 @@ var paths = {
     css: 'src/*.css'
 };
 gulp.task('js', function () {
-    return gulp.src(['src/query.js', 'src/paging.js']).pipe(concat('paging.js')).pipe(uglify()).pipe(gulp.dest('dist'));
+    return gulp.src(['src/query.js', 'src/paging.js']).pipe(concat('paging.js')).pipe(uglify()).pipe(gulp.dest('dist'))
+        .pipe(gulp.dest('docs'));
 });
 gulp.task('css', function () {
     return gulp.src(paths.css)
@@ -25,7 +26,8 @@ gulp.task('css', function () {
             compatibility: 'ie8'
         })) //兼容ie
         .pipe(gulp.dest('dist'))
-        .pipe(gulp.dest('dest'));
+        .pipe(gulp.dest('dest'))
+        .pipe(gulp.dest('docs'));
 });
 gulp.task('requirejs', function () {
     return rjs({

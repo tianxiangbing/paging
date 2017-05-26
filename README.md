@@ -57,7 +57,7 @@ npm install jq-page
 ## callback:function(page,size,count)
 
 	翻页时的回调方法，page为当前页码,size为每页条数，count为总页数
-## changePagesize:function(ps)
+## changePagesize:function(pagesize,currenpage,pagecount)
 
 	修改每页的条数,参数为int
 ## go:function(p)

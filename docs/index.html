@@ -14,7 +14,8 @@
 	<div id="pageTool"></div>
 	<div id="pageToolbar"></div>
 	<script type="text/javascript" src="jquery-1.11.2.js"></script>
-	<script type="text/javascript" src="paging.js"></script>
+	<script type="text/javascript" src="../src/query.js"></script>
+	<script type="text/javascript" src="../src/paging.js"></script>
 	<script>
 		/*
 		* Created with Sublime Text 3.
@@ -36,7 +37,11 @@ target: $('#pageTool'), pagesize: 10, count: 100, current:"3",callback: function
 			}
 		});
 		//jquery插件的写法
-		$('#pageToolbar').Paging({ pagesize: 10, count: 85, toolbar: true, hash: true });
+		$('#pageToolbar').Paging({ pagesize: 10, count: 85, toolbar: true, hash: true ,changePagesize:function(ps){
+			alert(ps)
+		},callback:function(a){
+			console.log(a)
+		}});
 	</script>
 </body>
 

@@ -114,6 +114,7 @@
 			this.render({
 				pagesize: ps
 			});
+			this.settings.changePagesize && this.settings.changePagesize.call(this, this.pagesize,this.current, this.pagecount);
 		},
 		format: function () {
 			var html = '<ul>'

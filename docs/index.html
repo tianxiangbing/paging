@@ -41,6 +41,22 @@ target: $('#pageTool'), pagesize: 10, count: 100, current:"3",callback: function
 		},callback:function(a){
 			console.log(a)
 		}});
+		//下面是个ajax的例子
+		/*
+		
+		var page = new Paging();
+		$.post('url',{current:1,pagesize:10},function(res){
+			//do something
+			page.init({			
+	target: $('#pageTool'), pagesize: 10, count: res.count, current:1,callback: function (pagecount, size, count) {
+					$.post('url',{current:pagecount,pagesize:10},function(res){
+						//do something
+					})
+				}
+			});
+		})
+		
+		*/
 	</script>
 </body>
 

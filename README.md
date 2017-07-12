@@ -1,23 +1,21 @@
 # paging
 分页控件paging
 
-例子见：[http://www.lovewebgames.com/jsmodule/paging.html](http://www.lovewebgames.com/jsmodule/paging.html)  
+例子见：[http://tianxiangbing.github.io/paging/](http://tianxiangbing.github.io/paging/)  *一个要仔细看例子的使用*
 或
-[http://tianxiangbing.github.io/paging/](http://tianxiangbing.github.io/paging/)  
+[http://www.lovewebgames.com/jsmodule/paging.html](http://www.lovewebgames.com/jsmodule/paging.html)  
 
 ![预览效果:](http://tianxiangbing.github.io/paging/paging.jpg "分页组件效果图")
 
-# 使用方法案例:
-
+# 使用方法案例:（推荐使用这种方式）
 	<div id="pageTool"></div>
-	var p = $('#pageTool').Paging({pagesize:10,count:100});
-	//返回的p是个数组，p[0]是第一个返回对象
-# 或者 （推荐使用这种方式）
-
 	var p = new Paging();
 	p.init({target:'#pageTool',pagesize:10,count:100});
 	//重新渲染分页使用render
 	p.render({count:100,pagesize:10,current:3});
+# 或者 
+	var p = $('#pageTool').Paging({pagesize:10,count:100});
+	//返回的p是个数组，p[0]是第一个返回对象
 ***
 # npm安装方式
 ```bash

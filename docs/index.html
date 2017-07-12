@@ -11,7 +11,12 @@
 <body>
 	<p>github:<a href="https://github.com/tianxiangbing/paging">https://github.com/tianxiangbing/paging</a></p>
 	<p>demo:<a href="http://www.lovewebgames.com/jsmodule/paging.html">http://www.lovewebgames.com/jsmodule/paging.html</a></p>
+	<h2>ajax分页</h2>
+	<p class="content">
+
+	</p>
 	<div id="pageTool"></div>
+	<h2>hash记录页码的方式</h2>
 	<div id="pageToolbar"></div>
 	<script type="text/javascript" src="jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="paging.js"></script>
@@ -27,14 +32,23 @@
 		* Desc: 确保代码最新及时修复bug，请去github上下载最新源码 https://github.com/tianxiangbing/paging
 		*/
 		var page = new Paging();
-		page.init({			
-target: $('#pageTool'), pagesize: 10, count: 100, current:3,callback: function (pagecount, size, count) {
+		page.init({	target: $('#pageTool'), pagesize: 10, count: 100, current:1,callback: function (pagecount, size, count) {
 				console.log(arguments)
 				alert('当前第 ' + pagecount + '页,每页 ' + size + '条,总页数：' + count + '页');
-				//动态设置总条数 https://github.com/tianxiangbing/paging
-				page.render({ count: 89, current: pagecount });
+					//动态设置总条数 https://github.com/tianxiangbing/paging
+					page.render({ count: 89, current: pagecount });
+				//这里我写个ajax吧
+				getHTML();
+
+				//如果你不用ajax分页，你可以直接在这里location.href='xxx.html?page='+pagecount 作跳转，这样的话，页面刷新后，你要传递current进来。
 			}
 		});
+		getHTML();
+		function getHTML(){
+			$.get('demo.txt',function(res){
+				$('.content').html('  当前时间：'+Date.now() +res);
+			},'text')
+		}
 		//jquery插件的写法
 		$('#pageToolbar').Paging({ pagesize: 10, count: 85, toolbar: true, hash: true ,changePagesize:function(ps){
 			alert(ps)
@@ -57,7 +71,9 @@ target: $('#pageTool'), pagesize: 10, count: 100, current:3,callback: function (
 		})
 		
 		*/
-	</script>
+</script>
+<p data-height="265" data-theme-id="dark" data-slug-hash="RgEMWq" data-default-tab="js,result" data-user="tianxiangbing" data-embed-version="2" data-pen-title="RgEMWq" class="codepen">See the Pen <a href="https://codepen.io/tianxiangbing/pen/RgEMWq/">RgEMWq</a> by 田想兵 (<a href="https://codepen.io/tianxiangbing">@tianxiangbing</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 </body>
 
 </html>

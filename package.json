@@ -1,6 +1,6 @@
 {
   "name": "jq-page",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "js分页插件",
   "main": "dist/paging.js",
   "directories": {

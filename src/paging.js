@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Created with Sublime Text 3.
  * demo地址: http://www.lovewebgames.com/jsmodule/index.html
  * github: https://github.com/tianxiangbing/paging

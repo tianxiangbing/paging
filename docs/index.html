@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿<!--
+ * @Descripttion: 
+ * @Author: tianxiangbing
+ * @Date: 2020-03-16 11:45:58
+ * @LastEditTime: 2020-03-16 12:16:59
+ * @github: https://github.com/tianxiangbing
+ -->
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -32,7 +39,7 @@
 		* Desc: 确保代码最新及时修复bug，请去github上下载最新源码 https://github.com/tianxiangbing/paging
 		*/
 		var page = new Paging();
-		page.init({	target: $('#pageTool'), pagesize: 10, count: 100, current:1,callback: function (pagecount, size, count) {
+		page.init({	target: $('#pageTool'), pagesize: 10, count: 300, current:1,callback: function (pagecount, size, count) {
 				console.log(arguments)
 				alert('当前第 ' + pagecount + '页,每页 ' + size + '条,总页数：' + count + '页');
 					//动态设置总条数 https://github.com/tianxiangbing/paging

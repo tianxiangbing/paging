@@ -120,26 +120,30 @@
 			var html = '<ul>'
 			html += '<li class="js-page-first js-page-action ui-pager" >' + this.settings.firstTpl + '</li>';
 			html += '<li class="js-page-prev js-page-action ui-pager">' + this.settings.prevTpl + '</li>';
-			if (this.pagecount > 6) {
+			if (this.pagecount > 10) {
 				html += '<li data-page="1" class="ui-pager">1</li>';
-				if (this.current <= 2) {
+				if (this.current < 5) {
 					html += '<li data-page="2" class="ui-pager">2</li>';
 					html += '<li data-page="3" class="ui-pager">3</li>';
-					html += '<li class="ui-paging-ellipse">' + this.settings.ellipseTpl + '</li>';
+					html += '<li data-page="4" class="ui-pager">4</li>';
+					html += '<li data-page="5" class="ui-pager">5</li>';
+					html += '<li class="ui-paging-ellipse 1">' + this.settings.ellipseTpl + '</li>';
 				} else
-					if (this.current > 2 && this.current <= this.pagecount - 2) {
-						if (this.current > 3) {
-							html += '<li>' + this.settings.ellipseTpl + '</li>';
+					if (this.current >= 5 && this.current <= this.pagecount - 5) {
+						if (this.current >= 5) {
+							html += '<li class="2">' + this.settings.ellipseTpl + '</li>';
 						}
+						html += '<li data-page="' + (this.current - 2) + '" class="ui-pager">' + (this.current - 2) + '</li>';
 						html += '<li data-page="' + (this.current - 1) + '" class="ui-pager">' + (this.current - 1) + '</li>';
 						html += '<li data-page="' + this.current + '" class="ui-pager">' + this.current + '</li>';
 						html += '<li data-page="' + (this.current + 1) + '" class="ui-pager">' + (this.current + 1) + '</li>';
-						if (this.current < this.pagecount - 2) {
-							html += '<li class="ui-paging-ellipse" class="ui-pager">' + this.settings.ellipseTpl + '</li>';
+						html += '<li data-page="' + (this.current + 2) + '" class="ui-pager">' + (this.current + 2) + '</li>';
+						if (this.current < this.pagecount - 4) {
+							html += '<li class="ui-paging-ellipse" class="ui-pager 3">' + this.settings.ellipseTpl + '</li>';
 						}
 					} else {
-						html += '<li class="ui-paging-ellipse" >' + this.settings.ellipseTpl + '</li>';
-						for (var i = this.pagecount - 2; i < this.pagecount; i++) {
+						html += '<li class="ui-paging-ellipse 4" >' + this.settings.ellipseTpl + '</li>';
+						for (var i = this.pagecount - 5; i < this.pagecount; i++) {
 							html += '<li data-page="' + i + '" class="ui-pager">' + i + '</li>'
 						}
 					}
